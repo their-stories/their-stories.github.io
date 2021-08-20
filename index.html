@@ -2,34 +2,61 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Their Stories</title>
-    <link rel="stylesheet" href="css/initialization/normalize.css">
-    <link rel="stylesheet" href="css/initialization/reset.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Their Stories</title>
+  <link rel="stylesheet" href="css/initialization/normalize.css">
+  <link rel="stylesheet" href="css/initialization/reset.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <style>
+    button {
+      height: 30px;
+      width: 150px;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 20px;
+      font-family: 'Oswald', sans-serif;
+      height: 52px;
+      cursor: pointer;
+      background-color: wheat;
+    }
+    #p1, #p2 {
+      display: none;
+    }
+  </style>
+  <script>
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+  </script>
 </head>
 
 <body>
-    <!-- Channel Plugin Scripts -->
-<script>
-    (function() {
+  <!-- Channel Plugin Scripts -->
+  <script>
+    (function () {
       var w = window;
       if (w.ChannelIO) {
-        return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+        return (window.console.error || window.console.log || function () {})('ChannelIO script included twice.');
       }
-      var ch = function() {
+      var ch = function () {
         ch.c(arguments);
       };
       ch.q = [];
-      ch.c = function(args) {
+      ch.c = function (args) {
         ch.q.push(args);
       };
       w.ChannelIO = ch;
+
       function l() {
         if (w.ChannelIOInitialized) {
           return;
@@ -57,14 +84,20 @@
     });
   </script>
   <!-- End Channel Plugin -->
-    <div class="app">
+  <!-- <div class="app">
         <div class="home">
             <div>
                 <img src="images/cover.jpg" alt="" class="cover_image">
             </div>
         </div>
-    </div>
+    </div> -->
+  <div>
+    <p id="p1">dfdfd</p>
+    <p id="p2">Hi, I'm the 2nd TEXT</p><br />
 
+    <button onclick="copyToClipboard('#p1')">Copy TEXT 1</button>
+    <button onclick="copyToClipboard('#p2')">Copy TEXT 2</button>
+  </div>
 </body>
 
 </html>
