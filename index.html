@@ -67,11 +67,11 @@
             </div>
         </div>
     </div> -->
-  <button class="btn" data-clipboard-text="1번 내용">
-    계좌번호 1
+  <button class="btn" data-clipboard-text="기중 계좌">
+    카카오뱅크 00000000000000
   </button>
-  <button class="btn" data-clipboard-text="2번 내용">
-    계좌번호 2
+  <button class="btn" data-clipboard-text="보람 계좌">
+    우리은행 000000000000
   </button>
 
   <!-- 복사하는 스크립트 -->
@@ -94,11 +94,11 @@
   <!-- 트리거 js -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
-  <!-- 트리거 내용 -->
+  <!-- 트리거 내용, 변수 -->
   <script>
  
     tippy('.btn', {
-      content: 'My tooltip!',
+      content: '계좌번호 복사 완료',
       trigger: 'click',
     });
   </script>
