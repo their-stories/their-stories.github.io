@@ -41,3 +41,12 @@ body {
   word-break: break-all;
   text-align: justify;
 }
+
+.btn {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.a_link_btn {
+  vertical-align: top;
+}
